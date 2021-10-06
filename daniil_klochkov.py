@@ -12,7 +12,10 @@ class Complex:
         return Complex(self.r + x.r, self.i + x.i)
 
     def __mul__(self, x):
-        return Complex(self.r * x.r - self.i * x.i, self.r * x.i + self.i * x.r)
+        if type(x) == Complex:
+            return Complex(self.r * x.r - self.i * x.i, self.r * x.i + self.i * x.r)
+        else:
+            return Complex(self.r * x, self.i * r)
 
     def __sub__(self, x):
         return Complex(self.r - x.r, self.i - x.i)
